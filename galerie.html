@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galerie von Miky Nailstudio - Sehen Sie meine Arbeiten: Maniküre, Pediküre, Nageldesign, Gel und Polygel. Inspiration für Ihre nächsten Nägel.">
+    <title>Galerie | Miky Nailstudio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-m">M</span>
+                <span class="logo-text">iky Nailstudio</span>
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Start</a></li>
+                <li><a href="leistungen.html">Leistungen</a></li>
+                <li><a href="kurse.html">Kurse</a></li>
+                <li><a href="ueber-mich.html">Über mich</a></li>
+                <li><a href="galerie.html" class="active">Galerie</a></li>
+                <li><a href="kontakt.html" class="cta-nav">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <span class="section-label">Galerie</span>
+            <h1>Meine Arbeiten</h1>
+            <p>Lassen Sie sich inspirieren von meinen Kreationen</p>
+        </div>
+    </section>
+
+    <!-- Gallery Filter -->
+    <section class="gallery-filter">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Alle</button>
+                <button class="filter-btn" data-filter="manikuere">Maniküre</button>
+                <button class="filter-btn" data-filter="pediküre">Pediküre</button>
+                <button class="filter-btn" data-filter="gel">Gel & Polygel</button>
+                <button class="filter-btn" data-filter="design">Nail Art</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid">
+                <!-- Gallery items will be dynamically loaded -->
+                <div class="gallery-item" data-category="manikuere">
+                    <div class="gallery-placeholder"></div>
+                    <div class="gallery-overlay">
+                        <p>Klassische Maniküre</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="gel">
+                    <div class="gallery-placeholder"></div>
+                    <div class="gallery-overlay">
+                        <p>Polygel Aufbau</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="design">
+                    <div class="gallery-placeholder"></div>
+                    <div class="gallery-overlay">
+                        <p>French mit Glitzer</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="manikuere">
+                    <div class="gallery-placeholder"></div>
+                    <div class="gallery-overlay">
+                        <p>Natürliche Eleganz</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="pediküre">
+                    <div class="gallery-placeholder"></div>
+                    <div class="gallery-overlay">
+                        <p>Sommerliche Pediküre</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="gel">
+                    <div class="gallery-placeholder"></div>
+                    <div class="gallery-overlay">
+                        <p>Gel-Nägel</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="design">
+                    <div class="gallery-placeholder"></div>
+                    <div class="gallery-overlay">
+                        <p>Nail Art Design</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="manikuere">
+                    <div class="gallery-placeholder"></div>
+                    <div class="gallery-overlay">
+                        <p>Business Look</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="design">
+                    <div class="gallery-placeholder"></div>
+                    <div class="gallery-overlay">
+                        <p>Ombré-Effekt</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="gel">
+                    <div class="gallery-placeholder"></div>
+                    <div class="gallery-overlay">
+                        <p>Natürlicher Aufbau</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="pediküre">
+                    <div class="gallery-placeholder"></div>
+                    <div class="gallery-overlay">
+                        <p>Pediküre mit French</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="design">
+                    <div class="gallery-placeholder"></div>
+                    <div class="gallery-overlay">
+                        <p>Geometrisches Design</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram CTA -->
+    <section class="instagram-cta">
+        <div class="container">
+            <div class="instagram-content">
+                <h2>Folgen Sie mir auf Instagram</h2>
+                <p>Für tägliche Inspiration, neue Designs und aktuelle Arbeiten folgen Sie mir auf Instagram @mikynails_2022</p>
+                <a href="https://www.instagram.com/mikynails_2022/" target="_blank" class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                    @mikynails_2022 folgen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Gefallen Ihnen meine Arbeiten?</h2>
+                <p>Lassen Sie uns gemeinsam Ihre Traumnägel kreieren</p>
+                <div class="cta-buttons">
+                    <a href="kontakt.html" class="btn btn-primary">Termin buchen</a>
+                    <a href="leistungen.html" class="btn btn-outline-light">Leistungen ansehen</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Miky Nailstudio</h4>
+                    <p>Professionelle Nagelpflege und Schulungen in Bodenwerder</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/mikynails_2022/" target="_blank" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Start</a></li>
+                        <li><a href="leistungen.html">Leistungen</a></li>
+                        <li><a href="kurse.html">Kurse</a></li>
+                        <li><a href="ueber-mich.html">Über mich</a></li>
+                        <li><a href="galerie.html">Galerie</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Leistungen</h4>
+                    <ul>
+                        <li><a href="leistungen.html#manikuere">Maniküre</a></li>
+                        <li><a href="leistungen.html#pediküre">Pediküre</a></li>
+                        <li><a href="leistungen.html#nagelaufbau">Nagelaufbau</a></li>
+                        <li><a href="kurse.html">Schulungen</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontakt</h4>
+                    <ul>
+                        <li>Großstrasse 21/22</li>
+                        <li>37619 Bodenwerder</li>
+                        <li><a href="tel:[Telefon]">[Telefon]</a></li>
+                        <li><a href="mailto:[E-Mail]">[E-Mail]</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Miky Nailstudio. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
