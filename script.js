@@ -126,34 +126,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ==========================================
-    // 6. SCROLL ANIMATIONS
-    // ==========================================
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    
-    // Observe elements for animation
-    const animateElements = document.querySelectorAll(
-        '.service-card, .value-item, .feature-card, .course-card, .gallery-item, .faq-item'
-    );
-    
-    animateElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
+// ==========================================
+// 6. SCROLL ANIMATIONS (stable)
+// ==========================================
+const animateElements = document.querySelectorAll(
+  '.service-card, .value-item, .feature-card, .course-card, .gallery-item, .faq-item'
+);
+
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target); // анимируем 1 раз и всё
+      }
     });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -10% 0px'
+  });
+
+  animateElements.forEach(el => {
+    el.classList.add('reveal'); // только класс, без inline-стилей
+    observer.observe(el);
+  });
+} else {
+  // fallback для старых браузеров
+  animateElements.forEach(el => el.classList.add('is-visible'));
+}
+
     
     // ==========================================
     // 7. SCROLL TO TOP BUTTON (Optional)
