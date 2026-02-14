@@ -52,28 +52,46 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <h1 class="hero-title">Perfektion in jedem Detail</h1>
-            <p class="hero-subtitle">Professionelle Nagelpflege & Schulungen mit über 20 Jahren Erfahrung</p>
-            <div class="hero-buttons">
-                <a href="kontakt.html" class="btn btn-primary">Termin buchen</a>
-                <a href="kurse.html" class="btn btn-secondary">Kurse entdecken</a>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <span></span>
-        </div>
-    </section>
+<!-- Hero Section -->
+<section class="hero" aria-labelledby="heroTitle">
+  <div class="container hero-content">
+
+    <!-- CHANGE: Hero Bild als echtes <img> statt Overlay-Background -->
+    <!-- WHY: besser für SEO/Performance (LCP), weniger Probleme mit Lesbarkeit, Text steht darunter -->
+    <div class="hero-media">
+      <img
+        src="images/hero.webp"
+        alt="Professionelle Nagelpflege bei Miky Nailstudio in Bodenwerder"
+        class="hero-img"
+        width="1600"
+        height="900"
+        decoding="async"
+        fetchpriority="high"
+      >
+    </div>
+
+    <!-- CHANGE: Text unter dem Bild -->
+    <!-- WHY: klare Hierarchie, bessere Conversion + keine Overlay-Probleme -->
+    <div class="hero-text">
+      <h1 id="heroTitle" class="hero-title">Perfektion in jedem Detail</h1>
+      <p class="hero-subtitle">Professionelle Nagelpflege &amp; Schulungen mit über 20 Jahren Erfahrung</p>
+
+      <div class="hero-buttons">
+        <a href="kontakt.html" class="btn btn-primary">Termin buchen</a>
+        <a href="kurse.html" class="btn btn-secondary">Kurse entdecken</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
     <!-- About Preview -->
     <section class="about-preview">
         <div class="container">
             <div class="about-grid">
                 <div class="about-image">
-                    <div class="image-placeholder"></div>
+                    <div class="about-image-placeholder" style="background-image: url('images/hero.webp');"></div>
                 </div>
                 <div class="about-content">
                     <span class="section-label">Willkommen</span>
