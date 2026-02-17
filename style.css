@@ -583,21 +583,25 @@ section {
 }
 
 /* ==========================================
-   8. SERVICES - УЛУЧШЕННЫЕ КАРТОЧКИ
+   8. SERVICES - УЛУЧШЕННЫЕ КАРТОЧКИ (MEDIA TOP)
    ========================================== */
 .services-preview {
     background: var(--color-cream);
 }
 
+/* CHANGE: cards a bit wider + nicer spacing */
+/* WHY: more premium, less “narrow” cards */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: var(--spacing-md);
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); /* CHANGE */
+    gap: calc(var(--spacing-md) + 6px); /* CHANGE */
 }
 
+/* Card */
 .service-card {
     background: var(--color-white);
-    padding: var(--spacing-lg) var(--spacing-md);
+    /* CHANGE: padding moved to body (optional) but keep fallback here */
+    padding: 0; /* CHANGE */
     border-radius: 20px;
     text-align: center;
     transition: all var(--transition-spring);
@@ -607,6 +611,7 @@ section {
     overflow: hidden;
 }
 
+/* CHANGE: top accent line stays */
 .service-card::before {
     content: '';
     position: absolute;
@@ -616,6 +621,7 @@ section {
     height: 4px;
     background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light));
     transform: scaleX(0);
+    transform-origin: left; /* CHANGE */
     transition: transform var(--transition-normal);
 }
 
@@ -629,6 +635,34 @@ section {
     transform: scaleX(1);
 }
 
+/* CHANGE: portrait media slot so vertical images fill it */
+/* WHY: full image visible + uses the whole area (no crop) */
+.service-media{
+  width: 100%;
+  aspect-ratio: 4 / 5;                 /* CHANGE: под вертикальные фото */
+  background: rgba(0,0,0,.03);
+  overflow: hidden;
+  display: grid;                        /* CHANGE */
+  place-items: center;                  /* CHANGE: центрируем contain */
+}
+
+.service-media img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;                  /* видно всё */
+  object-position: center;
+  transform: none;                      /* на случай если был zoom */
+}
+
+
+/* CHANGE: content wrapper */
+/* WHY: keep spacing clean while media is separated */
+.service-body {
+    padding: var(--spacing-lg) var(--spacing-md); /* CHANGE */
+}
+
+/* Featured */
 .service-card.featured {
     background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-gray) 100%);
     color: var(--color-white);
@@ -644,12 +678,16 @@ section {
     color: var(--color-gold);
 }
 
+/* CHANGE: icon smaller because image exists */
+/* WHY: icon becomes supporting, not main visual */
 .service-icon {
-    font-size: 3.5rem;
-    margin-bottom: var(--spacing-md);
+    font-size: 2.2rem; /* CHANGE */
+    margin-bottom: var(--spacing-sm); /* CHANGE */
     filter: grayscale(20%);
+    opacity: 0.95; /* CHANGE */
 }
 
+/* Links */
 .service-link {
     display: inline-block;
     margin-top: var(--spacing-sm);
