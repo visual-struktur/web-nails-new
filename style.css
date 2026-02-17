@@ -1,6 +1,6 @@
 /* ==========================================
-   MIKY NAILSTUDIO - PREMIUM WEBSITE STYLES
-   Luxury Dark Design - Improved Version
+   MIKY NAILSTUDIO - УЛУЧШЕННЫЕ ПРЕМИУМ СТИЛИ
+   Элегантный дизайн с новыми шрифтами
    ========================================== */
 
 /* ==========================================
@@ -13,7 +13,7 @@
 }
 
 :root {
-    /* Colors - Premium Luxury Palette */
+    /* Цветовая палитра - роскошная и современная */
     --color-dark: #0a0a0a;
     --color-dark-gray: #1a1a1a;
     --color-medium-gray: #2a2a2a;
@@ -26,11 +26,12 @@
     --color-rose-gold: #b76e79;
     --color-champagne: #f7e7ce;
     
-    /* Typography */
-    --font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
-    --font-heading: 'Cormorant Garamond', serif;
-    --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-accent: 'Italiana', cursive;
+    /* УЛУЧШЕННЫЕ ШРИФТЫ - более элегантные и читаемые */
+    --font-display: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Crimson Pro', Georgia, serif;
+    --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-accent: 'Playfair Display', cursive;
     
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -39,10 +40,11 @@
     --spacing-lg: 4rem;
     --spacing-xl: 6rem;
     
-    /* Transitions */
+    /* Transitions - более плавные */
     --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
     
     /* Shadows */
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -57,9 +59,9 @@ html {
 
 body {
     font-family: var(--font-body);
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 400;
-    line-height: 1.7;
+    line-height: 1.8;
     color: var(--color-dark);
     background-color: var(--color-white);
     overflow-x: hidden;
@@ -74,7 +76,7 @@ body {
 }
 
 /* ==========================================
-   2. TYPOGRAPHY
+   2. УЛУЧШЕННАЯ ТИПОГРАФИКА
    ========================================== */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
@@ -86,13 +88,13 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-size: clamp(2.75rem, 6vw, 4.5rem);
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: -0.03em;
 }
 
 h2 {
     font-size: clamp(2.25rem, 4.5vw, 3.5rem);
-    font-weight: 500;
+    font-weight: 600;
 }
 
 h3 {
@@ -102,27 +104,28 @@ h3 {
 
 p {
     margin-bottom: var(--spacing-sm);
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 0.01em;
+    line-height: 1.9;
 }
 
 .lead {
-    font-size: 1.3rem;
-    font-weight: 300;
+    font-size: 1.375rem;
+    font-weight: 400;
     color: var(--color-medium-gray);
-    line-height: 1.6;
+    line-height: 1.7;
     letter-spacing: 0.005em;
 }
 
 .section-label {
     display: inline-block;
+    font-family: var(--font-ui);
     font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 3px;
     color: var(--color-gold);
     margin-bottom: var(--spacing-sm);
-    font-family: var(--font-body);
 }
 
 .section-header {
@@ -135,24 +138,24 @@ p {
     color: var(--color-medium-gray);
     max-width: 640px;
     margin: 0 auto;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 /* ==========================================
-   3. BUTTONS
+   3. УЛУЧШЕННЫЕ КНОПКИ
    ========================================== */
 .btn {
     display: inline-block;
     padding: 1.1rem 2.5rem;
-    font-family: var(--font-body);
+    font-family: var(--font-ui);
     font-size: 0.9rem;
     font-weight: 600;
     text-decoration: none;
     text-align: center;
     border: none;
-    border-radius: 0;
+    border-radius: 50px;
     cursor: pointer;
-    transition: all var(--transition-normal);
+    transition: all var(--transition-spring);
     text-transform: uppercase;
     letter-spacing: 2px;
     position: relative;
@@ -227,7 +230,7 @@ p {
 }
 
 /* ==========================================
-   4. NAVIGATION - IMPROVED
+   4. NAVIGATION - УЛУЧШЕННАЯ
    ========================================== */
 .navbar {
     position: fixed;
@@ -255,7 +258,7 @@ p {
     align-items: center;
 }
 
-/* BRAND - IMPROVED LOGO SECTION */
+/* BRAND - УЛУЧШЕННАЯ СЕКЦИЯ ЛОГО */
 .brand {
     display: inline-flex;
     align-items: center;
@@ -284,13 +287,12 @@ p {
 
 .brand-wordmark {
     font-family: var(--font-accent);
-    font-weight: 400;
+    font-weight: 600;
     font-size: 28px;
     letter-spacing: 0.03em;
     line-height: 1;
     color: rgba(255, 255, 255, 0.98);
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    font-style: italic;
 }
 
 /* NAVIGATION MENU */
@@ -305,6 +307,7 @@ p {
 .nav-menu a {
     color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
+    font-family: var(--font-ui);
     font-weight: 500;
     font-size: 0.9rem;
     letter-spacing: 0.5px;
@@ -338,7 +341,7 @@ p {
 .nav-menu a.cta-nav {
     background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 100%);
     padding: 0.7rem 1.8rem;
-    border-radius: 0;
+    border-radius: 50px;
     color: var(--color-white);
     box-shadow: var(--shadow-gold);
 }
@@ -372,132 +375,128 @@ p {
 }
 
 /* ==========================================
-   5. HERO SECTION - UPDATED (IMAGE TOP, TEXT BELOW)
+   5. HERO SECTION - ЗНАЧИТЕЛЬНО УЛУЧШЕН
    ========================================== */
-
-/* CHANGE: hero больше не 100vh centered overlay — теперь секция с медиа + текстом */
 .hero {
-  position: relative;
-  height: auto;                 /* CHANGE */
-  min-height: 0;                /* CHANGE */
-  padding: clamp(88px, 10vh, 120px) 0 clamp(44px, 6vh, 72px); /* WHY: учитываем хедер + премиум воздух */
-  display: block;               /* CHANGE */
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
-  overflow: hidden;
+    position: relative;
+    height: auto;
+    min-height: 0;
+    padding: clamp(88px, 10vh, 120px) 0 clamp(44px, 6vh, 72px);
+    display: block;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+    overflow: hidden;
 }
 
-/* Оставляем ваш премиум свет/блики */
+/* Премиум световые эффекты */
 .hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 20% 50%, rgba(201, 169, 97, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(183, 110, 121, 0.06) 0%, transparent 50%);
-  animation: gradientShift 15s ease infinite;
-  pointer-events: none;
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(201, 169, 97, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(183, 110, 121, 0.06) 0%, transparent 50%);
+    animation: gradientShift 15s ease infinite;
+    pointer-events: none;
 }
 
-/* CHANGE: ваша сетка-оверлей остаётся, но лучше через ::after (не требует HTML) */
+/* Тонкая сетка */
 .hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)" /></svg>');
-  opacity: 0.35;
-  pointer-events: none;
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)" /></svg>');
+    opacity: 0.35;
+    pointer-events: none;
 }
 
-/* WHY: если в HTML остался .hero-overlay — прячем, чтобы не дублировать сетку */
 .hero-overlay {
-  display: none; /* CHANGE */
+    display: none;
 }
 
-/* CHANGE: hero-content теперь контейнер-колонка: картинка сверху, текст ниже */
 .hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 1100px;          /* CHANGE: чуть шире, чтобы картинка смотрелась дороже */
-  margin: 0 auto;
-  text-align: left;           /* CHANGE: премиальнее, чем центр; если хочешь центр — скажи */
-  color: var(--color-white);
-  animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-  display: grid;              /* CHANGE */
-  gap: clamp(16px, 2.2vw, 22px);
-  padding: 0 clamp(16px, 4vw, 24px);
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: left;
+    color: var(--color-white);
+    animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    display: grid;
+    gap: clamp(16px, 2.2vw, 22px);
+    padding: 0 clamp(16px, 4vw, 24px);
 }
 
-/* NEW: обёртка для картинки (нужна, если ты вставил HTML из моего hero-блока) */
 .hero-media {
-  border-radius: 22px;
-  overflow: hidden;
-  box-shadow: 0 18px 40px rgba(0,0,0,.22);
-  background: #0a0a0a;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+    background: #0a0a0a;
+    transition: transform var(--transition-slow);
 }
 
-/* NEW: само изображение hero.webp */
+.hero-media:hover {
+    transform: scale(1.01);
+}
+
 .hero-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;       /* WHY: фиксируем высоту и убираем CLS */
-  object-fit: cover;
-  transform: translateZ(0);   /* WHY: стабильнее рендер */
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    transform: translateZ(0);
+    transition: transform var(--transition-slow);
 }
 
-/* NEW: блок текста под картинкой */
+.hero-media:hover .hero-img {
+    transform: scale(1.03);
+}
+
 .hero-text {
-  max-width: 760px;           /* WHY: читаемость, премиум типографика */
+    max-width: 760px;
 }
 
-/* Заголовок/подзаголовок — сохраняем твою эстетику */
 .hero-title {
-  color: var(--color-white);
-  margin: 0 0 var(--spacing-sm);
-  font-weight: 400;
-  text-shadow: 0 6px 26px rgba(0, 0, 0, 0.55);
-  line-height: 1.05;
+    color: var(--color-white);
+    margin: 0 0 var(--spacing-sm);
+    font-weight: 700;
+    text-shadow: 0 6px 26px rgba(0, 0, 0, 0.55);
+    line-height: 1.05;
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .hero-subtitle {
-  font-size: clamp(1.05rem, 1.25vw, 1.35rem);
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.9);
-  margin: 0 0 var(--spacing-lg);
-  letter-spacing: 0.3px;
-  line-height: 1.6;
+    font-size: clamp(1.05rem, 1.25vw, 1.35rem);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 var(--spacing-lg);
+    letter-spacing: 0.3px;
+    line-height: 1.6;
 }
 
-/* Кнопки — как было, но чуть аккуратнее на мобиле */
 .hero-buttons {
-  display: flex;
-  gap: var(--spacing-md);
-  justify-content: flex-start; /* CHANGE: под левый край, премиальнее */
-  flex-wrap: wrap;
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
-/* Mobile UX: кнопки в колонку */
-@media (max-width: 520px) {
-  .hero-buttons a {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-/* WHY: скролл-индикатор больше не нужен, потому что hero не full-screen */
 .scroll-indicator {
-  display: none; /* CHANGE */
+    display: none;
 }
 
-/* Animations — оставляем */
+/* Animations */
 @keyframes gradientShift {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to   { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ==========================================
@@ -544,9 +543,28 @@ section {
     width: 100%;
     height: 500px;
     background: var(--color-light-gray);
-    border-radius: 0;
+    border-radius: 22px;
     overflow: hidden;
     box-shadow: var(--shadow-lg);
+    transition: transform var(--transition-slow);
+}
+
+.about-image:hover,
+.intro-image:hover,
+.story-image:hover {
+    transform: scale(1.02);
+}
+
+.about-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform var(--transition-slow);
+}
+
+.about-image:hover .about-image-placeholder {
+    transform: scale(1.05);
 }
 
 .image-placeholder {
@@ -565,7 +583,7 @@ section {
 }
 
 /* ==========================================
-   8. SERVICES
+   8. SERVICES - УЛУЧШЕННЫЕ КАРТОЧКИ
    ========================================== */
 .services-preview {
     background: var(--color-cream);
@@ -580,11 +598,25 @@ section {
 .service-card {
     background: var(--color-white);
     padding: var(--spacing-lg) var(--spacing-md);
-    border-radius: 0;
+    border-radius: 20px;
     text-align: center;
-    transition: all var(--transition-normal);
+    transition: all var(--transition-spring);
     border: 1px solid transparent;
     box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light));
+    transform: scaleX(0);
+    transition: transform var(--transition-normal);
 }
 
 .service-card:hover {
@@ -593,10 +625,19 @@ section {
     border-color: var(--color-gold);
 }
 
+.service-card:hover::before {
+    transform: scaleX(1);
+}
+
 .service-card.featured {
     background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-gray) 100%);
     color: var(--color-white);
     border: 2px solid var(--color-gold);
+}
+
+.service-card.featured h3,
+.service-card.featured p {
+    color: var(--color-white);
 }
 
 .service-card.featured h3 {
@@ -614,11 +655,16 @@ section {
     margin-top: var(--spacing-sm);
     color: var(--color-gold);
     text-decoration: none;
+    font-family: var(--font-ui);
     font-weight: 600;
     font-size: 0.9rem;
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: all var(--transition-fast);
+}
+
+.service-card.featured .service-link {
+    color: var(--color-white);
 }
 
 .service-link:hover {
@@ -642,7 +688,7 @@ section {
 .value-item {
     text-align: center;
     padding: var(--spacing-md);
-    transition: transform var(--transition-normal);
+    transition: transform var(--transition-spring);
 }
 
 .value-item:hover {
@@ -690,7 +736,7 @@ section {
     font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.85);
     margin-bottom: var(--spacing-lg);
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .cta-buttons {
@@ -730,7 +776,7 @@ section {
     width: 100%;
     height: 600px;
     background: var(--color-light-gray);
-    border-radius: 0;
+    border-radius: 20px;
     box-shadow: var(--shadow-lg);
 }
 
@@ -743,7 +789,7 @@ section {
     padding: 0.75rem 0;
     padding-left: 2rem;
     position: relative;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .service-list li::before {
@@ -769,11 +815,17 @@ section {
 .benefit-tags span {
     background: var(--color-champagne);
     padding: 0.6rem 1.2rem;
-    border-radius: 0;
+    border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 600;
     color: var(--color-dark);
     border: 1px solid var(--color-gold);
+    transition: all var(--transition-fast);
+}
+
+.benefit-tags span:hover {
+    background: var(--color-gold);
+    color: var(--color-white);
 }
 
 .info-box {
@@ -781,635 +833,12 @@ section {
     padding: var(--spacing-md);
     border-left: 4px solid var(--color-gold);
     margin: var(--spacing-md) 0;
+    border-radius: 8px;
 }
 
 /* ==========================================
-   12. WHY CHOOSE / FEATURES
+   12. FOOTER - ПРЕМИУМ ДИЗАЙН
    ========================================== */
-.why-choose,
-.why-courses {
-    background: var(--color-cream);
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: var(--spacing-md);
-}
-
-.feature-card {
-    background: var(--color-white);
-    padding: var(--spacing-lg) var(--spacing-md);
-    border-radius: 0;
-    transition: all var(--transition-normal);
-    box-shadow: var(--shadow-sm);
-}
-
-.feature-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-}
-
-.feature-number {
-    font-size: 3rem;
-    font-weight: 300;
-    color: var(--color-gold);
-    opacity: 0.25;
-    margin-bottom: var(--spacing-sm);
-    font-family: var(--font-display);
-}
-
-.feature-icon {
-    font-size: 3rem;
-    margin-bottom: var(--spacing-md);
-}
-
-/* ==========================================
-   13. COURSES
-   ========================================== */
-.course-intro {
-    background: var(--color-white);
-}
-
-.intro-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-lg);
-    align-items: center;
-}
-
-.teaching-values {
-    display: grid;
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-md);
-}
-
-.teaching-values .value-item {
-    text-align: left;
-    padding: 0;
-}
-
-.courses-list {
-    background: var(--color-cream);
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: var(--spacing-lg);
-}
-
-.course-card {
-    background: var(--color-white);
-    border-radius: 0;
-    padding: var(--spacing-lg);
-    margin-bottom: var(--spacing-md);
-    box-shadow: var(--shadow-sm);
-    transition: all var(--transition-normal);
-    border-left: 4px solid var(--color-gold);
-}
-
-.course-card:hover {
-    box-shadow: var(--shadow-lg);
-    transform: translateX(8px);
-}
-
-.course-card.featured {
-    border: 2px solid var(--color-gold);
-    background: var(--color-champagne);
-}
-
-.course-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: var(--spacing-sm);
-}
-
-.course-badge {
-    display: inline-block;
-    padding: 0.4rem 1rem;
-    background: var(--color-gold);
-    color: var(--color-white);
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-radius: 0;
-    margin-bottom: 0.5rem;
-}
-
-.course-badge.gold {
-    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 100%);
-}
-
-.course-duration {
-    color: var(--color-medium-gray);
-    font-weight: 600;
-}
-
-.course-description {
-    font-size: 1.125rem;
-    color: var(--color-medium-gray);
-    margin-bottom: var(--spacing-sm);
-    font-weight: 300;
-}
-
-.course-list {
-    list-style: none;
-    margin: var(--spacing-sm) 0;
-}
-
-.course-list li {
-    padding: 0.5rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-    font-weight: 300;
-}
-
-.course-list li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: var(--color-gold);
-    font-size: 1.5rem;
-}
-
-.course-info-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-sm);
-    margin: var(--spacing-md) 0;
-    padding: var(--spacing-md);
-    background: var(--color-champagne);
-    border-radius: 0;
-}
-
-.info-item strong {
-    display: block;
-    color: var(--color-dark);
-    margin-bottom: 0.25rem;
-    font-weight: 600;
-}
-
-.info-item p {
-    margin: 0;
-    font-size: 0.875rem;
-    color: var(--color-medium-gray);
-}
-
-/* Testimonial */
-.testimonial-section {
-    background: var(--color-cream);
-}
-
-.testimonial-card {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    padding: var(--spacing-xl);
-    background: var(--color-white);
-    border-radius: 0;
-    position: relative;
-    box-shadow: var(--shadow-md);
-}
-
-.quote-icon {
-    font-size: 5rem;
-    color: var(--color-gold);
-    opacity: 0.2;
-    line-height: 1;
-    margin-bottom: var(--spacing-sm);
-    font-family: Georgia, serif;
-}
-
-.testimonial-text {
-    font-size: 1.3rem;
-    font-style: italic;
-    color: var(--color-dark);
-    margin-bottom: var(--spacing-md);
-    font-weight: 300;
-    line-height: 1.7;
-}
-
-.testimonial-author {
-    color: var(--color-medium-gray);
-    font-weight: 600;
-}
-
-/* ==========================================
-   14. ABOUT PAGE
-   ========================================== */
-.about-story {
-    background: var(--color-white);
-}
-
-.about-story-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-lg);
-    align-items: center;
-}
-
-.my-values {
-    background: var(--color-cream);
-}
-
-.values-grid-large {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--spacing-lg);
-}
-
-.value-card {
-    background: var(--color-white);
-    padding: var(--spacing-lg);
-    border-radius: 0;
-    transition: all var(--transition-normal);
-    box-shadow: var(--shadow-sm);
-    border-top: 3px solid var(--color-gold);
-}
-
-.value-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-}
-
-.value-number {
-    font-size: 4rem;
-    font-weight: 300;
-    color: var(--color-gold);
-    opacity: 0.15;
-    margin-bottom: var(--spacing-sm);
-    font-family: var(--font-display);
-}
-
-/* Timeline */
-.timeline-section {
-    background: var(--color-white);
-}
-
-.timeline {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    padding-left: 60px;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 18px;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(to bottom, var(--color-gold), var(--color-gold-light));
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: var(--spacing-xl);
-}
-
-.timeline-dot {
-    position: absolute;
-    left: -48px;
-    top: 4px;
-    width: 16px;
-    height: 16px;
-    background: var(--color-gold);
-    border: 4px solid var(--color-white);
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px var(--color-gold);
-}
-
-.timeline-content {
-    background: var(--color-champagne);
-    padding: var(--spacing-lg);
-    border-radius: 0;
-    border-left: 4px solid var(--color-gold);
-}
-
-/* Philosophy */
-.philosophy-section {
-    background: var(--color-cream);
-}
-
-.philosophy-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-/* ==========================================
-   15. GALLERY
-   ========================================== */
-.gallery-filter {
-    background: var(--color-white);
-    padding: var(--spacing-md) 0;
-}
-
-.filter-buttons {
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing-sm);
-    flex-wrap: wrap;
-}
-
-.filter-btn {
-    padding: 0.85rem 1.8rem;
-    background: transparent;
-    border: 2px solid var(--color-dark);
-    color: var(--color-dark);
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: all var(--transition-fast);
-    border-radius: 0;
-}
-
-.filter-btn:hover,
-.filter-btn.active {
-    background: var(--color-dark);
-    color: var(--color-white);
-    transform: translateY(-2px);
-}
-
-.gallery-section {
-    background: var(--color-cream);
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: var(--spacing-md);
-}
-
-.gallery-item {
-    position: relative;
-    height: 320px;
-    overflow: hidden;
-    border-radius: 0;
-    cursor: pointer;
-    transition: all var(--transition-normal);
-    box-shadow: var(--shadow-sm);
-}
-
-.gallery-item:hover {
-    transform: scale(1.03);
-    box-shadow: var(--shadow-lg);
-}
-
-.gallery-placeholder {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #d8d8d8 0%, #ececec 100%);
-}
-
-.gallery-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
-    padding: var(--spacing-md);
-    color: var(--color-white);
-    transform: translateY(100%);
-    transition: transform var(--transition-normal);
-}
-
-.gallery-item:hover .gallery-overlay {
-    transform: translateY(0);
-}
-
-.instagram-cta {
-    background: var(--color-dark);
-    color: var(--color-white);
-    text-align: center;
-}
-
-.instagram-content h2 {
-    color: var(--color-white);
-    margin-bottom: var(--spacing-sm);
-}
-
-.instagram-content p {
-    color: rgba(255, 255, 255, 0.85);
-    margin-bottom: var(--spacing-md);
-}
-
-/* ==========================================
-   16. CONTACT PAGE
-   ========================================== */
-.contact-section {
-    background: var(--color-white);
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: var(--spacing-lg);
-}
-
-.contact-form-wrapper,
-.contact-info-wrapper {
-    width: 100%;
-}
-
-.form-intro {
-    color: var(--color-medium-gray);
-    margin-bottom: var(--spacing-md);
-    font-weight: 300;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-md);
-}
-
-.form-group label {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--color-dark);
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    padding: 1rem;
-    border: 2px solid var(--color-light-gray);
-    border-radius: 0;
-    font-family: var(--font-body);
-    font-size: 1rem;
-    font-weight: 300;
-    transition: all var(--transition-fast);
-    background: var(--color-white);
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--color-gold);
-    box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.1);
-}
-
-.form-note {
-    font-size: 0.85rem;
-    color: var(--color-medium-gray);
-    margin-top: 0.5rem;
-    font-weight: 300;
-}
-
-.contact-info-card,
-.hours-card {
-    background: var(--color-champagne);
-    padding: var(--spacing-lg);
-    border-radius: 0;
-    margin-bottom: var(--spacing-md);
-    border-top: 3px solid var(--color-gold);
-}
-
-.contact-info-card h3,
-.hours-card h3 {
-    margin-bottom: var(--spacing-md);
-    color: var(--color-dark);
-}
-
-.info-item {
-    display: flex;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-sm);
-    padding-bottom: var(--spacing-sm);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.info-item:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-.info-icon {
-    font-size: 1.5rem;
-    color: var(--color-gold);
-}
-
-.info-item a {
-    color: var(--color-dark);
-    text-decoration: none;
-    transition: color var(--transition-fast);
-    font-weight: 400;
-}
-
-.info-item a:hover {
-    color: var(--color-gold);
-}
-
-.hours-note {
-    font-weight: 600;
-    color: var(--color-gold);
-    margin-bottom: var(--spacing-md);
-}
-
-.hours-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-.hours-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    font-weight: 300;
-}
-
-.hours-item:last-child {
-    border-bottom: none;
-}
-
-.map-section {
-    height: 450px;
-}
-
-.map-placeholder {
-    width: 100%;
-    height: 100%;
-    background: var(--color-light-gray);
-    position: relative;
-}
-
-.map-overlay {
-    position: absolute;
-    bottom: var(--spacing-md);
-    left: var(--spacing-md);
-    background: var(--color-white);
-    padding: var(--spacing-md);
-    border-radius: 0;
-    box-shadow: var(--shadow-lg);
-    border-top: 3px solid var(--color-gold);
-}
-
-/* FAQ */
-.faq-section {
-    background: var(--color-cream);
-}
-
-.faq-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--spacing-md);
-}
-
-.faq-item {
-    background: var(--color-white);
-    padding: var(--spacing-lg);
-    border-radius: 0;
-    border-left: 4px solid var(--color-gold);
-    box-shadow: var(--shadow-sm);
-    transition: all var(--transition-normal);
-}
-
-.faq-item:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-}
-
-.faq-item h3 {
-    font-size: 1.15rem;
-    margin-bottom: var(--spacing-sm);
-    font-weight: 600;
-}
-
-.faq-item p {
-    color: var(--color-medium-gray);
-    margin-bottom: 0;
-    font-weight: 300;
-}
-
-/* ==========================================
-   FOOTER - ENHANCED PREMIUM VERSION
-   Add this to your existing style.css or replace the footer section
-   ========================================== */
-
 .footer {
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
     color: var(--color-white);
@@ -1418,7 +847,6 @@ section {
     overflow: hidden;
 }
 
-/* Top gradient line */
 .footer::before {
     content: '';
     position: absolute;
@@ -1435,7 +863,6 @@ section {
     );
 }
 
-/* Subtle background glow effect */
 .footer::after {
     content: '';
     position: absolute;
@@ -1459,6 +886,7 @@ section {
 .footer-col h4 {
     color: var(--color-gold);
     margin-bottom: var(--spacing-md);
+    font-family: var(--font-ui);
     font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: 1px;
@@ -1467,7 +895,6 @@ section {
     padding-bottom: 12px;
 }
 
-/* Underline effect for headings */
 .footer-col h4::after {
     content: '';
     position: absolute;
@@ -1481,7 +908,7 @@ section {
 
 .footer-col p {
     color: rgba(255, 255, 255, 0.7);
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.7;
     font-size: 0.95rem;
     margin-bottom: var(--spacing-md);
@@ -1499,13 +926,12 @@ section {
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     transition: all var(--transition-fast);
-    font-weight: 300;
+    font-weight: 400;
     display: inline-block;
     position: relative;
     font-size: 0.95rem;
 }
 
-/* Hover line animation */
 .footer-col ul li a::before {
     content: '';
     position: absolute;
@@ -1526,7 +952,7 @@ section {
     width: 100%;
 }
 
-/* FOOTER BRAND/LOGO SECTION - IMPROVED */
+/* FOOTER BRAND */
 .footer-brand {
     display: inline-flex;
     align-items: center;
@@ -1555,11 +981,10 @@ section {
 
 .footer-brand-title {
     font-family: var(--font-accent);
-    font-weight: 400;
+    font-weight: 600;
     font-size: 22px;
     letter-spacing: 0.03em;
     color: rgba(255, 255, 255, 0.95);
-    font-style: italic;
     margin-bottom: var(--spacing-sm);
     background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
     -webkit-background-clip: text;
@@ -1583,13 +1008,12 @@ section {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 50%;
     color: rgba(255, 255, 255, 0.8);
-    transition: all var(--transition-normal);
+    transition: all var(--transition-spring);
     border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
 }
 
-/* Gradient hover effect */
 .social-links a::before {
     content: '';
     position: absolute;
@@ -1623,13 +1047,12 @@ section {
     transform: scale(1.1);
 }
 
-/* Footer Bottom */
 .footer-bottom {
     text-align: center;
     padding-top: var(--spacing-md);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     color: rgba(255, 255, 255, 0.5);
-    font-weight: 300;
+    font-weight: 400;
     font-size: 0.9rem;
     position: relative;
     z-index: 1;
@@ -1639,59 +1062,8 @@ section {
     margin: 0;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .footer {
-        padding: calc(var(--spacing-lg) + var(--spacing-md)) 0 var(--spacing-md) 0;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-    }
-
-    .footer-col {
-        text-align: center;
-    }
-
-    .footer-col h4::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .footer-brand {
-        justify-content: center;
-    }
-
-    .social-links {
-        justify-content: center;
-    }
-
-    .footer-col ul li a {
-        display: inline;
-    }
-
-    .footer-col ul li a:hover {
-        transform: none;
-    }
-}
-
-@media (max-width: 480px) {
-    .footer-brand-title {
-        font-size: 18px;
-    }
-
-    .footer-logo {
-        height: 36px;
-    }
-
-    .footer-col h4 {
-        font-size: 1rem;
-    }
-}
-
 /* ==========================================
-   18. RESPONSIVE DESIGN
+   13. RESPONSIVE DESIGN
    ========================================== */
 @media (max-width: 768px) {
     .nav-menu {
@@ -1728,10 +1100,6 @@ section {
         direction: ltr;
     }
     
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-    
     .hero-buttons,
     .cta-buttons {
         flex-direction: column;
@@ -1741,15 +1109,7 @@ section {
         width: 100%;
     }
     
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    }
-    
     .footer-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .form-row {
         grid-template-columns: 1fr;
     }
     
@@ -1759,6 +1119,28 @@ section {
     
     .brand-logo {
         height: 42px;
+    }
+
+    .hero-buttons a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-col {
+        text-align: center;
+    }
+
+    .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-brand {
+        justify-content: center;
+    }
+
+    .social-links {
+        justify-content: center;
     }
 }
 
@@ -1771,10 +1153,6 @@ section {
     
     .container {
         padding: 0 var(--spacing-sm);
-    }
-    
-    .gallery-grid {
-        grid-template-columns: 1fr;
     }
     
     .brand-wordmark {
@@ -1793,10 +1171,14 @@ section {
     h2 {
         font-size: 2rem;
     }
+
+    .footer-brand-title {
+        font-size: 18px;
+    }
 }
 
 /* ==========================================
-   19. ANIMATIONS & UTILITIES
+   14. ANIMATIONS & UTILITIES
    ========================================== */
 .fade-in {
     animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1828,7 +1210,7 @@ section {
 }
 
 /* ==========================================
-   20. LOADING & TRANSITIONS
+   15. LOADING & TRANSITIONS
    ========================================== */
 @media (prefers-reduced-motion: reduce) {
     *,

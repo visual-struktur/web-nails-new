@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Miky Nailstudio - Professionelle Maniküre, Pediküre und Nagelkurse in Bodenwerder. Hygiene, Qualität und individuelle Betreuung seit über 20 Jahren.">
     <title>Miky Nailstudio | Professionelle Nagelstudio in Bodenwerder</title>
-    <link rel="stylesheet" href="style.css">
     
-    <!-- Premium Google Fonts -->
+    <!-- УЛУЧШЕННЫЕ ПРЕМИУМ ШРИФТЫ -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&family=Italiana&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Crimson+Pro:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- ССЫЛКА НА УЛУЧШЕННЫЙ CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- Navigation -->
 <nav class="navbar">
   <div class="container">
-    <!-- CHANGE: Brand als SVG-Logo + Wortmarke -->
-    <!-- WHY: SVG ist scharf auf allen Auflösungen und wirkt premium im Header -->
     <a href="index.html" class="brand" aria-label="Miky Nailstudio – Startseite">
       <img
         src="images/logo.svg"
@@ -32,32 +32,28 @@
       <span class="brand-wordmark">Miky Nailstudio</span>
     </a>
 
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" aria-label="Menü öffnen">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-            <!-- Mobile Menu Toggle -->
-            <button class="mobile-menu-toggle" aria-label="Menü öffnen">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <!-- Navigation Menu -->
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Start</a></li>
-                <li><a href="leistungen.html">Leistungen</a></li>
-                <li><a href="kurse.html">Kurse</a></li>
-                <li><a href="ueber-mich.html">Über mich</a></li>
-                <li><a href="galerie.html">Galerie</a></li>
-                <li><a href="kontakt.html" class="cta-nav">Kontakt</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Navigation Menu -->
+    <ul class="nav-menu">
+        <li><a href="index.html" class="active">Start</a></li>
+        <li><a href="leistungen.html">Leistungen</a></li>
+        <li><a href="kurse.html">Kurse</a></li>
+        <li><a href="ueber-mich.html">Über mich</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="kontakt.html" class="cta-nav">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
 
 <!-- Hero Section -->
 <section class="hero" aria-labelledby="heroTitle">
   <div class="container hero-content">
-
-    <!-- CHANGE: Hero Bild als echtes <img> statt Overlay-Background -->
-    <!-- WHY: besser für SEO/Performance (LCP), weniger Probleme mit Lesbarkeit, Text steht darunter -->
     <div class="hero-media">
       <img
         src="images/hero.webp"
@@ -70,8 +66,6 @@
       >
     </div>
 
-    <!-- CHANGE: Text unter dem Bild -->
-    <!-- WHY: klare Hierarchie, bessere Conversion + keine Overlay-Probleme -->
     <div class="hero-text">
       <h1 id="heroTitle" class="hero-title">Perfektion in jedem Detail</h1>
       <p class="hero-subtitle">Professionelle Nagelpflege &amp; Schulungen mit über 20 Jahren Erfahrung</p>
@@ -81,113 +75,111 @@
         <a href="kurse.html" class="btn btn-secondary">Kurse entdecken</a>
       </div>
     </div>
-
   </div>
 </section>
 
-
-    <!-- About Preview -->
-    <section class="about-preview">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-image">
-                    <div class="about-image-placeholder" style="background-image: url('images/hero.webp');"></div>
-                </div>
-                <div class="about-content">
-                    <span class="section-label">Willkommen</span>
-                    <h2>Mihaela Gorceag</h2>
-                    <p class="lead">Mit Leidenschaft, Präzision und über 20 Jahren Erfahrung biete ich Ihnen professionelle Nagelpflege auf höchstem Niveau.</p>
-                    <p>Von der klassischen Maniküre bis zum Nagelaufbau mit stärkenden Polygel-Gelen – jede Behandlung wird mit größter Sorgfalt und unter strengsten Hygienestandards durchgeführt.</p>
-                    <a href="ueber-mich.html" class="btn btn-outline">Mehr über mich</a>
-                </div>
+<!-- About Preview -->
+<section class="about-preview">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-image">
+                <div class="about-image-placeholder" style="background-image: url('images/hero.webp');"></div>
+            </div>
+            <div class="about-content">
+                <span class="section-label">Willkommen</span>
+                <h2>Mihaela Gorceag</h2>
+                <p class="lead">Mit Leidenschaft, Präzision und über 20 Jahren Erfahrung biete ich Ihnen professionelle Nagelpflege auf höchstem Niveau.</p>
+                <p>Von der klassischen Maniküre bis zum Nagelaufbau mit stärkenden Polygel-Gelen – jede Behandlung wird mit größter Sorgfalt und unter strengsten Hygienestandards durchgeführt.</p>
+                <a href="ueber-mich.html" class="btn btn-outline">Mehr über mich</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Services Preview -->
-    <section class="services-preview">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Leistungen</span>
-                <h2>Was ich anbiete</h2>
-                <p>Individuelle Behandlungen für Ihre perfekten Nägel</p>
+<!-- Services Preview -->
+<section class="services-preview">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Leistungen</span>
+            <h2>Was ich anbiete</h2>
+            <p>Individuelle Behandlungen für Ihre perfekten Nägel</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💅</div>
+                <h3>Maniküre</h3>
+                <p>Professionelle Nagelpflege für gepflegte und gesunde Hände</p>
+                <a href="leistungen.html#manikuere" class="service-link">Mehr erfahren →</a>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">💅</div>
-                    <h3>Maniküre</h3>
-                    <p>Professionelle Nagelpflege für gepflegte und gesunde Hände</p>
-                    <a href="leistungen.html#manikuere" class="service-link">Mehr erfahren →</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">👣</div>
-                    <h3>Pediküre</h3>
-                    <p>Verwöhnende Fußpflege für perfekt gepflegte Füße</p>
-                    <a href="leistungen.html#pediküre" class="service-link">Mehr erfahren →</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">✨</div>
-                    <h3>Nagelaufbau</h3>
-                    <p>Gel, Polygel und stärkende Systeme für langanhaltende Schönheit</p>
-                    <a href="leistungen.html#nagelaufbau" class="service-link">Mehr erfahren →</a>
-                </div>
-                <div class="service-card featured">
-                    <div class="service-icon">🎓</div>
-                    <h3>Schulungen</h3>
-                    <p>Praxisnahe Kurse – vom Anfänger bis zum Profi</p>
-                    <a href="kurse.html" class="service-link">Kurse ansehen →</a>
-                </div>
+            <div class="service-card">
+                <div class="service-icon">👣</div>
+                <h3>Pediküre</h3>
+                <p>Verwöhnende Fußpflege für perfekt gepflegte Füße</p>
+                <a href="leistungen.html#pediküre" class="service-link">Mehr erfahren →</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h3>Nagelaufbau</h3>
+                <p>Gel, Polygel und stärkende Systeme für langanhaltende Schönheit</p>
+                <a href="leistungen.html#nagelaufbau" class="service-link">Mehr erfahren →</a>
+            </div>
+            <div class="service-card featured">
+                <div class="service-icon">🎓</div>
+                <h3>Schulungen</h3>
+                <p>Praxisnahe Kurse – vom Anfänger bis zum Profi</p>
+                <a href="kurse.html" class="service-link">Kurse ansehen →</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Values Section -->
-    <section class="values">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Meine Werte</span>
-                <h2>Warum Miky Nailstudio?</h2>
+<!-- Values Section -->
+<section class="values">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Meine Werte</span>
+            <h2>Warum Miky Nailstudio?</h2>
+        </div>
+        <div class="values-grid">
+            <div class="value-item">
+                <div class="value-icon">🧼</div>
+                <h3>Hygiene an erster Stelle</h3>
+                <p>Sterilisation und Sauberkeit sind für mich selbstverständlich – Ihre Gesundheit steht an erster Stelle.</p>
             </div>
-            <div class="values-grid">
-                <div class="value-item">
-                    <div class="value-icon">🧼</div>
-                    <h3>Hygiene an erster Stelle</h3>
-                    <p>Sterilisation und Sauberkeit sind für mich selbstverständlich – Ihre Gesundheit steht an erster Stelle.</p>
-                </div>
-                <div class="value-item">
-                    <div class="value-icon">🎯</div>
-                    <h3>Präzise Arbeit</h3>
-                    <p>Jedes Detail zählt. Ich arbeite sorgfältig und präzise für perfekte Ergebnisse.</p>
-                </div>
-                <div class="value-item">
-                    <div class="value-icon">💎</div>
-                    <h3>Individuelle Betreuung</h3>
-                    <p>Jeder Kunde ist einzigartig. Ich nehme mir Zeit für Ihre persönlichen Wünsche.</p>
-                </div>
-                <div class="value-item">
-                    <div class="value-icon">📚</div>
-                    <h3>Erfahrung & Expertise</h3>
-                    <p>Über 20 Jahre Erfahrung und kontinuierliche Weiterbildung für höchste Qualität.</p>
-                </div>
+            <div class="value-item">
+                <div class="value-icon">🎯</div>
+                <h3>Präzise Arbeit</h3>
+                <p>Jedes Detail zählt. Ich arbeite sorgfältig und präzise für perfekte Ergebnisse.</p>
+            </div>
+            <div class="value-item">
+                <div class="value-icon">💎</div>
+                <h3>Individuelle Betreuung</h3>
+                <p>Jeder Kunde ist einzigartig. Ich nehme mir Zeit für Ihre persönlichen Wünsche.</p>
+            </div>
+            <div class="value-item">
+                <div class="value-icon">📚</div>
+                <h3>Erfahrung & Expertise</h3>
+                <p>Über 20 Jahre Erfahrung und kontinuierliche Weiterbildung für höchste Qualität.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Bereit für perfekte Nägel?</h2>
-                <p>Buchen Sie jetzt Ihren Termin oder vereinbaren Sie ein unverbindliches Beratungsgespräch</p>
-                <div class="cta-buttons">
-                    <a href="kontakt.html" class="btn btn-primary">Jetzt Termin buchen</a>
-                    <a href="kurse.html" class="btn btn-outline-light">Kurs anfragen</a>
-                </div>
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Bereit für perfekte Nägel?</h2>
+            <p>Buchen Sie jetzt Ihren Termin oder vereinbaren Sie ein unverbindliches Beratungsgespräch</p>
+            <div class="cta-buttons">
+                <a href="kontakt.html" class="btn btn-primary">Jetzt Termin buchen</a>
+                <a href="kurse.html" class="btn btn-outline-light">Kurs anfragen</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-<!-- Footer - Improved Premium Design with Logo -->
+<!-- Footer -->
 <footer class="footer">
     <div class="container">
         <div class="footer-grid">
@@ -263,6 +255,39 @@
     </div>
 </footer>
 
-    <script src="script.js"></script>
+<script>
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// Mobile menu toggle
+const mobileToggle = document.querySelector('.mobile-menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
+if (mobileToggle) {
+    mobileToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        
+        // Animate hamburger
+        this.classList.toggle('active');
+    });
+    
+    // Close menu when clicking on a link
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            mobileToggle.classList.remove('active');
+        });
+    });
+}
+</script>
+
 </body>
 </html>
