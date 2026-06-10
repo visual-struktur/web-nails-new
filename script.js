@@ -1,285 +1,169 @@
-// ==========================================
-// MIKY NAILSTUDIO - JAVASCRIPT
-// ==========================================
+document.addEventListener('DOMContentLoaded', function () {
 
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // ==========================================
-    // 1. MOBILE MENU TOGGLE
-    // ==========================================
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const body = document.body;
-    
-    if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-        });
-        
-        // Close menu when clicking on a link
-        const navLinks = document.querySelectorAll('.nav-menu a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                navMenu.classList.remove('active');
-                body.style.overflow = '';
-            });
-        });
-    }
-    
-    // ==========================================
-    // 2. NAVBAR SCROLL EFFECT
-    // ==========================================
-    const navbar = document.querySelector('.navbar');
-    let lastScroll = 0;
-    
-    window.addEventListener('scroll', function() {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > 100) {
-            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)';
-        } else {
-            navbar.style.boxShadow = 'none';
-        }
-        
-        lastScroll = currentScroll;
-    });
-    
-    // ==========================================
-    // 3. SMOOTH SCROLL FOR ANCHOR LINKS
-    // ==========================================
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const offsetTop = target.offsetTop - 80;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // ==========================================
-    // 4. GALLERY FILTER
-    // ==========================================
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    
-    if (filterBtns.length > 0) {
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                const filter = this.getAttribute('data-filter');
-                
-                // Update active button
-                filterBtns.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Filter gallery items
-                galleryItems.forEach(item => {
-                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                        item.style.display = 'block';
-                        setTimeout(() => {
-                            item.style.opacity = '1';
-                            item.style.transform = 'scale(1)';
-                        }, 10);
-                    } else {
-                        item.style.opacity = '0';
-                        item.style.transform = 'scale(0.8)';
-                        setTimeout(() => {
-                            item.style.display = 'none';
-                        }, 300);
-                    }
-                });
-            });
-        });
-    }
-    
-    // ==========================================
-    // 5. CONTACT FORM HANDLING
-    // ==========================================
-    const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                service: document.getElementById('service').value,
-                message: document.getElementById('message').value
-            };
-            
-            // In a real application, you would send this data to a server
-            console.log('Form submitted:', formData);
-            
-            // Show success message
-            alert('Vielen Dank für Ihre Nachricht! Ich melde mich so schnell wie möglich bei Ihnen.');
-            
-            // Reset form
-            contactForm.reset();
-        });
-    }
-    
-// ==========================================
-// 6. SCROLL ANIMATIONS (stable)
-// ==========================================
-const animateElements = document.querySelectorAll(
-  '.service-card, .value-item, .feature-card, .course-card, .gallery-item, .faq-item'
-);
+  // ── NAVBAR SCROLL ──────────────────────────────────────────────────────────
+  const navbar = document.querySelector('.navbar');
+  if (navbar) {
+    window.addEventListener('scroll', function () {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+  }
 
-if ('IntersectionObserver' in window) {
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        obs.unobserve(entry.target); // анимируем 1 раз и всё
+  // ── MOBILE MENU ────────────────────────────────────────────────────────────
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  if (toggle && navMenu) {
+    const openMenu = () => {
+      navMenu.classList.add('active');
+      toggle.classList.add('active');
+      toggle.setAttribute('aria-label', 'Menü schließen');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeMenu = () => {
+      navMenu.classList.remove('active');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-label', 'Menü öffnen');
+      document.body.style.overflow = '';
+    };
+
+    toggle.addEventListener('click', () =>
+      navMenu.classList.contains('active') ? closeMenu() : openMenu()
+    );
+
+    navMenu.querySelectorAll('a').forEach(link =>
+      link.addEventListener('click', closeMenu)
+    );
+
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('active') &&
+          !navMenu.contains(e.target) &&
+          !toggle.contains(e.target)) {
+        closeMenu();
       }
     });
-  }, {
-    threshold: 0.15,
-    rootMargin: '0px 0px -10% 0px'
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+  }
+
+  // ── SMOOTH SCROLL FOR ANCHOR LINKS ─────────────────────────────────────────
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+    });
   });
 
-  animateElements.forEach(el => {
-    el.classList.add('reveal'); // только класс, без inline-стилей
-    observer.observe(el);
-  });
-} else {
-  // fallback для старых браузеров
-  animateElements.forEach(el => el.classList.add('is-visible'));
-}
+  // ── SCROLL REVEAL ──────────────────────────────────────────────────────────
+  if ('IntersectionObserver' in window) {
+    // Auto-tag section containers
+    const sectionSelectors = [
+      '.about-preview .container',
+      '.services-preview .container',
+      '.values .container',
+      '.cta-section .container',
+      '.about-story .container',
+      '.my-values .container',
+      '.timeline-section .container',
+      '.philosophy-section .container',
+      '.course-intro .container',
+      '.courses-list .container',
+      '.why-choose .container',
+      '.why-courses .container',
+      '.testimonial-section .container',
+      '.gallery-section .container',
+      '.instagram-cta .container',
+      '.contact-section .container',
+      '.faq-section .container',
+    ];
 
-    
-    // ==========================================
-    // 7. SCROLL TO TOP BUTTON (Optional)
-    // ==========================================
-    function createScrollToTopButton() {
-        const scrollBtn = document.createElement('button');
-        scrollBtn.innerHTML = '↑';
-        scrollBtn.className = 'scroll-to-top';
-        scrollBtn.style.cssText = `
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--color-gold);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.5rem;
-            display: none;
-            z-index: 999;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        `;
-        
-        document.body.appendChild(scrollBtn);
-        
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                scrollBtn.style.display = 'block';
-            } else {
-                scrollBtn.style.display = 'none';
-            }
-        });
-        
-        scrollBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        scrollBtn.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
-            this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.3)';
-        });
-        
-        scrollBtn.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-            this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.2)';
-        });
-    }
-    
-    createScrollToTopButton();
-    
-    // ==========================================
-    // 8. LAZY LOADING FOR IMAGES (if real images are added)
-    // ==========================================
-    const lazyImages = document.querySelectorAll('img[data-src]');
-    
-    const imageObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.add('loaded');
-                imageObserver.unobserve(img);
-            }
-        });
+    sectionSelectors.forEach(sel => {
+      document.querySelectorAll(sel).forEach(el => el.classList.add('reveal'));
     });
-    
-    lazyImages.forEach(img => imageObserver.observe(img));
-    
-    // ==========================================
-    // 9. ACTIVE NAV LINK BASED ON SCROLL
-    // ==========================================
-    function updateActiveNavLink() {
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-menu a');
-        
-        let currentSection = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            const sectionHeight = section.clientHeight;
-            
-            if (window.pageYOffset >= sectionTop && 
-                window.pageYOffset < sectionTop + sectionHeight) {
-                currentSection = section.getAttribute('id');
-            }
-        });
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(currentSection)) {
-                link.classList.add('active');
-            }
-        });
-    }
-    
-    window.addEventListener('scroll', updateActiveNavLink);
-    
-    // ==========================================
-    // 10. FORM VALIDATION ENHANCEMENT
-    // ==========================================
-    const formInputs = document.querySelectorAll('input, textarea, select');
-    
-    formInputs.forEach(input => {
-        // Add focus effect
-        input.addEventListener('focus', function() {
-            this.parentElement.classList.add('focused');
-        });
-        
-        input.addEventListener('blur', function() {
-            this.parentElement.classList.remove('focused');
-            
-            // Validate on blur
-            if (this.hasAttribute('required') && !this.value.trim()) {
-                this.style.borderColor = '#e74c3c';
-            } else {
-                this.style.borderColor = '';
-            }
-        });
+
+    // Tag grids for stagger
+    const gridSelectors = [
+      '.services-grid',
+      '.values-grid',
+      '.premium-values',
+      '.features-grid',
+      '.values-grid-large',
+      '.gallery-grid',
+      '.faq-grid',
+      '.footer-grid',
+    ];
+
+    gridSelectors.forEach(sel => {
+      document.querySelectorAll(sel).forEach(el => el.classList.add('reveal-group'));
     });
-    
-    console.log('Miky Nailstudio website loaded successfully! 💅✨');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.10, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal, .reveal-group').forEach(el =>
+      revealObserver.observe(el)
+    );
+  } else {
+    // Fallback: show everything immediately
+    document.querySelectorAll('.reveal, .reveal-group').forEach(el =>
+      el.classList.add('visible')
+    );
+  }
+
+  // ── GALLERY FILTER ─────────────────────────────────────────────────────────
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  if (filterBtns.length) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function () {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        const filter = this.dataset.filter;
+        galleryItems.forEach(item => {
+          const show = filter === 'all' || item.dataset.category === filter;
+          item.style.display = show ? '' : 'none';
+        });
+      });
+    });
+  }
+
+  // ── CONTACT FORM ───────────────────────────────────────────────────────────
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const btn = this.querySelector('button[type="submit"]');
+      const original = btn.textContent;
+      btn.textContent = 'Gesendet ✓';
+      btn.disabled = true;
+      setTimeout(() => { btn.textContent = original; btn.disabled = false; }, 4000);
+    });
+  }
+
+  // ── LAZY IMAGES ────────────────────────────────────────────────────────────
+  if ('IntersectionObserver' in window) {
+    const imgObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          if (img.dataset.src) img.src = img.dataset.src;
+          imgObserver.unobserve(img);
+        }
+      });
+    });
+    document.querySelectorAll('img[data-src]').forEach(img => imgObserver.observe(img));
+  }
+
 });
